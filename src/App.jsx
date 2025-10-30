@@ -1,28 +1,20 @@
-import { useState } from 'react'
+import Topbar from "./components/Topbar";
+import LeadSummary from "./components/LeadSummary";
+import LeadDetails from "./components/LeadDetails";
+import ActivityFeed from "./components/ActivityFeed";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-[radial-gradient(1200px_600px_at_50%_-200px,rgba(9,9,11,0.06),transparent_60%)]">
+      <Topbar />
+      <main className="pb-10">
+        <LeadSummary />
+        <LeadDetails />
+        <ActivityFeed />
+      </main>
+      <footer className="mx-auto w-full max-w-7xl px-4 pb-8 pt-4 text-xs text-zinc-500 sm:px-6 lg:px-8">
+        <p>© {new Date().getFullYear()} Lead Manager — Demo detail view</p>
+      </footer>
     </div>
-  )
+  );
 }
-
-export default App
